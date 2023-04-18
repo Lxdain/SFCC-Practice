@@ -1,0 +1,66 @@
+<form
+    action="${pdict.formActions.newsletter}"
+    class="newsletter-form js-newsletter-form"
+    method="POST"
+    <isprint value=${pdict.forms.newsletter.attributes} encoding="off" />>
+
+    <isscript>
+        let emailRequired = pdict.forms.newsletter.email.mandatory === true;
+        let fnameRequired = pdict.forms.newsletter.firstName.mandatory === true;
+        let lnameRequired = pdict.forms.newsletter.mandatory === true;
+    </isscript>
+
+    <div class="form-group ${fnameRequired ? 'required' : ''}">
+        <isprint value="${pdict.forms.newsletter.firstName.label}" encoding="htmlcontent" />
+        <input
+            type="text"
+            class="form-control"
+            autocomplete="off"
+            id="${pdict.forms.newsletter.firstName.htmlName}"
+            ${fnameRequired ? ' required ' : ''}
+            data-missing-error="${Resource.msg('error.message.required', 'forms', null)}"
+            data-range-error="${Resource.msg('error.message.lessthan50', 'forms', null)}"
+            aria-describedby="form-newsletter-fname-error"
+            <isprint value=${pdict.forms.newsletter.firstName.attributes} encoding="off" />>
+        <div class="invalid-feedback" id="form-newsletter-fname-error"></div>
+    </div>
+
+    <div class="form-group ${lnameRequired ? 'required' : ''}">
+        <isprint value="${pdict.forms.newsletter.lastName.label}" encoding="htmlcontent" />
+        <input
+            type="text"
+            class="form-control"
+            autocomplete="off"
+            id="${pdict.forms.newsletter.lastName.htmlName}"
+            ${lnameRequired ? ' required ' : ''}
+            data-missing-error="${Resource.msg('error.message.required', 'forms', null)}"
+            data-range-error="${Resource.msg('error.message.lessthan50', 'forms', null)}"
+            aria-describedby="form-newsletter-lname-error"
+            <isprint value=${pdict.forms.newsletter.lastName.attributes} encoding="off" />>
+        <div class="invalid-feedback" id="form-newsletter-lname-error"></div>
+    </div>
+
+    <div class="form-group ${emailRequired ? 'required' : ''}">
+        <isprint value="${pdict.forms.newsletter.email.label}" encoding="htmlcontent" />
+        <input
+            type="text"
+            class="form-control"
+            autocomplete="off"
+            id="${pdict.forms.newsletter.email.htmlName}"
+            ${emailRequired ? ' required ' : ''}
+            data-range-error="${Resource.msg('error.message.lessthan50', 'forms', null)}"
+            data-missing-error="${Resource.msg('error.message.required', 'forms', null)}"
+            data-pattern-mismatch="${Resource.msg('error.message.parse.email.profile.form','forms',null)}"
+            aria-describedby="form-newsletter-email-error"
+            <isprint value=${pdict.forms.newsletter.email.attributes} encoding="off" />>
+        <div class="invalid-feedback" id="form-newsletter-email-error"></div>
+    </div>
+
+    <button type="submit"
+        name="${pdict.forms.newsletter.subscribe.htmlName}"
+        class="btn btn-primary">
+        <isprint value="${Resource.msg(pdict.forms.newsletter.subscribe.label, 'forms', null)}" encoding="htmlcontent" />
+    </button>
+</form>
+
+<iscomment> "${pdict.forms.newsletter.firstName.label}" </iscomment>

@@ -1,0 +1,34 @@
+<div class="card">
+    <div class="card-header clearfix">
+        <h2 class="pull-left">${Resource.msg('label.newsletter','account',null)}</h2>
+        <iscomment> <isif condition="${!pdict.account.isExternallyAuthenticated}">
+            <a href="${URLUtils.url('Account-EditProfile')}" class="pull-right" aria-label="${Resource.msg('label.profile.edit','account',null)}">${Resource.msg('link.edit','account',null)}</a>
+        </isif> </iscomment>
+    </div>
+    <div class="card-body">
+    <iscomment> Napravi isif u slucaju da vec postoje subskripcije i u slucaju da ih nema </iscomment>
+        <dl>
+            <dt>${Resource.msg('label.newsletter.firstName','account',null)}</dt>
+            <dd>${pdict.account.profile.firstName}</dd>
+        </dl>
+        <dl>
+            <dt>${Resource.msg('label.newsletter.lastName','account',null)}</dt>
+            <dd>${pdict.account.profile.lastName}</dd>
+        </dl>
+        <dl>
+            <dt>${Resource.msg('label.newsletter.email','account',null)}</dt>
+            <dd>${pdict.account.profile.email}</dd>
+        </dl>
+
+        <isif condition="${pdict.addPaymentUrl}">
+            <div class="card-footer card-footer-border text-center">
+                <a href="${URLUtils.url('Newsletter-EditAddSubscription')}" class="card-link" aria-label="${Resource.msg('label.newsletter.addsubscription','account',null)}">${Resource.msg('link.subscribe','account',null)}</a>
+            </div>
+        </isif>
+
+<p>${pdict.forms.newsletter}</p>
+<iscomment> testing </iscomment>
+
+    </div>
+</div>
+<iscomment> OVDE SKONTAJ KAKO DA LUINKUJES EDIT DUGME NA KOTROLER UTU KOJA TI TREBA  </iscomment>

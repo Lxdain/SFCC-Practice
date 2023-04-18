@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users xmlns="http://www.demandware.com/xml/impex/user/2007-09-05">
+    <user login="p.marinkovic@beeit.rs" enabled-flag="true">
+        <credentials>
+            <external-id>66aa10e5-d5aa-43da-a3e3-f3c5517737f6</external-id>
+        </credentials>
+        <profile>
+            <first-name>Pavle</first-name>
+            <last-name>Marinkovic</last-name>
+            <email>p.marinkovic@beeit.rs</email>
+        </profile>
+    </user>
+
+    <user login="danilodjuric2003@gmail.com" enabled-flag="true">
+        <credentials>
+            <external-id>bb0cd920-1314-4965-8a96-c84d0e6fc4c6</external-id>
+        </credentials>
+        <profile>
+            <first-name>Danilo</first-name>
+            <last-name>Djuric</last-name>
+            <email>danilodjuric2003@gmail.com</email>
+            <phone-mobile>+381631561987</phone-mobile>
+            <preferred-data-locale>none</preferred-data-locale>
+        </profile>
+    </user>
+
+</users>
